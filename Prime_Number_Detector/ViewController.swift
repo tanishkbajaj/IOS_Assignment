@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var enterNumberTextField: UITextField!
     @IBOutlet weak var resultLabel: UILabel!
     
@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     }
  
     @IBAction func primeCheckerButton(_ sender: Any) {
+        
+        enterNumberTextField.resignFirstResponder()
         
         var count = 0
         
@@ -75,8 +77,25 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Handle the text field’s user input through delegate callbacks.
+        enterNumberTextField.delegate = self
+        
     }
+    
+    //MARK: Actions
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        //hide keyboard
+        textField.resignFirstResponder()
+    //always want to respond to the user pressing the Return key
+        return true
+        
+    }
+    
+//    func textFieldDidEndEditing(_ textField: UITextField) {
+//        
+//        
+//    }
     
     
 }
