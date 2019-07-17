@@ -18,7 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return number
     }
- 
+    
     @IBAction func primeCheckerButton(_ sender: Any) {
         
         enterNumberTextField.resignFirstResponder()
@@ -87,15 +87,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         //hide keyboard
         textField.resignFirstResponder()
-    //always want to respond to the user pressing the Return key
+        //always want to respond to the user pressing the Return key
         return true
         
     }
     
-//    func textFieldDidEndEditing(_ textField: UITextField) {
-//        
-//        
-//    }
+//        func textFieldDidEndEditing(_ textField: UITextField) {
+//    
+//    
+//        }
     
     
 }
